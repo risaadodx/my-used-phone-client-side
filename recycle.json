@@ -1,92 +1,100 @@
 [
   {
-    "seller name": "kim",
-    "product name": "iphone 11",
-    "image": "",
-    "category": "iPhone",
-    "original price": "60000",
-    "resale price": "30000",
-    "location": "Dhaka",
-    "year of use": "1 "
+    "category_name": "iPhone",
+    "category_item": [
+      {
+        "seller_name": "kim",
+        "product_name": "iphone 11",
+        "image": "",
+        "original_price": "60000",
+        "resale_price": "30000",
+        "location": "Dhaka",
+        "year_of_use": "1 "
+      },
+      {
+        "seller_name": "jenny",
+        "product_name": "iphone 13 pro max",
+        "image": "",
+        "original_price": "120000",
+        "resale_price": "70000",
+        "location": "Chittagong",
+        "year_of_use": "1.5 "
+      },
+      {
+        "seller_name": "rafi",
+        "product_name": "iphone 12 pro ",
+        "image": "",
+        "original_price": "90000",
+        "resale_price": "50000",
+        "location": "Chittagong",
+        "year_of_use": "1 "
+      }
+    ]
   },
+
   {
-    "seller name": "jenny",
-    "product name": "iphone 13 pro max",
-    "image": "",
-    "category": "iPhone",
-    "original price": "120000",
-    "resale price": "70000",
-    "location": "Chittagong",
-    "year of use": "1.5 "
+    "category_name": "Samsung",
+    "category_item": [
+      {
+        "seller_name": "shamim",
+        "product_name": "Galaxy s22 Plus ",
+        "image": "",
+        "original_price": "85000",
+        "resale_price": "45000",
+        "location": "Dhaka",
+        "year_of_use": "1 "
+      },
+      {
+        "seller_name": "kaiser",
+        "product_name": "Galaxy A33 ",
+        "image": "",
+        "original_price": "40000",
+        "resale_price": "25000",
+        "location": "Dhaka",
+        "year_of_use": "2 "
+      },
+      {
+        "seller_name": "mim",
+        "product_name": "Galaxy A03 ",
+        "image": "",
+        "original_price": "14000",
+        "resale_price": "8000",
+        "location": "Chittagong",
+        "year_of_use": "1 "
+      }
+    ]
   },
+
   {
-    "seller name": "rafi",
-    "product name": "iphone 12 pro ",
-    "image": "",
-    "category": "iPhone",
-    "original price": "90000",
-    "resale price": "50000",
-    "location": "Chittagong",
-    "year of use": "1 "
-  },
-  {
-    "seller name": "shamim",
-    "product name": "Galaxy s22 Plus ",
-    "image": "",
-    "category": "Samsung",
-    "original price": "85000",
-    "resale price": "45000",
-    "location": "Dhaka",
-    "year of use": "1 "
-  },
-  {
-    "seller name": "kaiser",
-    "product name": "Galaxy A33 ",
-    "image": "",
-    "category": "Samsung",
-    "original price": "40000",
-    "resale price": "25000",
-    "location": "Dhaka",
-    "year of use": "2 "
-  },
-  {
-    "seller name": "mim",
-    "product name": "Galaxy A03 ",
-    "image": "",
-    "category": "Samsung",
-    "original price": "14000",
-    "resale price": "8000",
-    "location": "Chittagong",
-    "year of use": "1 "
-  },
-  {
-    "seller name": "sumaiya",
-    "product name": "OnePlus 10 Pro",
-    "image": "",
-    "category": "OnePlus",
-    "original price": "60000",
-    "resale price": "32000",
-    "location": "Chittagong",
-    "year of use": "1 "
-  },
-  {
-    "seller name": "Mofiz",
-    "product name": "OnePlus 9 Pro",
-    "image": "",
-    "category": "OnePlus",
-    "original price": "58000",
-    "resale price": "30000",
-    "location": "Dhaka",
-    "year of use": "1.2 "
-  },
-  {
-    "seller name": "Rony",
-    "product name": "OnePlus 9R",
-    "image": "",
-    "category": "OnePlus",
-    "original price": "40000",
-    "resale price": "24000",
-    "location": "Chittagong",
-    "year of use": "1.4"
+    "category_name": "OnePlus",
+    "category_item": [
+      {
+        "seller_name": "sumaiya",
+        "product_name": "OnePlus 10 Pro",
+        "image": "",
+        "original_price": "60000",
+        "resale_price": "32000",
+        "location": "Chittagong",
+        "year_of_use": "1 "
+      },
+      {
+        "seller_name": "Mofiz",
+        "product_name": "OnePlus 9 Pro",
+        "image": "",
+        "original_price": "58000",
+        "resale_price": "30000",
+        "location": "Dhaka",
+        "year_of_use": "1.2 "
+      },
+      {
+        "seller_name": "Rony",
+        "product_name": "OnePlus 9R",
+        "image": "",
+        "original_price": "40000",
+        "resale_price": "24000",
+        "location": "Chittagong",
+        "year_of_use": "1.4"
+      }
+    ]
   }
 ]

@@ -1,0 +1,92 @@
+[
+  {
+    "seller name": "kim",
+    "product name": "iphone 11",
+    "image": "",
+    "category": "iPhone",
+    "original price": "60000",
+    "resale price": "30000",
+    "location": "Dhaka",
+    "year of use": "1 "
+  },
+  {
+    "seller name": "jenny",
+    "product name": "iphone 13 pro max",
+    "image": "",
+    "category": "iPhone",
+    "original price": "120000",
+    "resale price": "70000",
+    "location": "Chittagong",
+    "year of use": "1.5 "
+  },
+  {
+    "seller name": "rafi",
+    "product name": "iphone 12 pro ",
+    "image": "",
+    "category": "iPhone",
+    "original price": "90000",
+    "resale price": "50000",
+    "location": "Chittagong",
+    "year of use": "1 "
+  },
+  {
+    "seller name": "shamim",
+    "product name": "Galaxy s22 Plus ",
+    "image": "",
+    "category": "Samsung",
+    "original price": "85000",
+    "resale price": "45000",
+    "location": "Dhaka",
+    "year of use": "1 "
+  },
+  {
+    "seller name": "kaiser",
+    "product name": "Galaxy A33 ",
+    "image": "",
+    "category": "Samsung",
+    "original price": "40000",
+    "resale price": "25000",
+    "location": "Dhaka",
+    "year of use": "2 "
+  },
+  {
+    "seller name": "mim",
+    "product name": "Galaxy A03 ",
+    "image": "",
+    "category": "Samsung",
+    "original price": "14000",
+    "resale price": "8000",
+    "location": "Chittagong",
+    "year of use": "1 "
+  },
+  {
+    "seller name": "sumaiya",
+    "product name": "OnePlus 10 Pro",
+    "image": "",
+    "category": "OnePlus",
+    "original price": "60000",
+    "resale price": "32000",
+    "location": "Chittagong",
+    "year of use": "1 "
+  },
+  {
+    "seller name": "Mofiz",
+    "product name": "OnePlus 9 Pro",
+    "image": "",
+    "category": "OnePlus",
+    "original price": "58000",
+    "resale price": "30000",
+    "location": "Dhaka",
+    "year of use": "1.2 "
+  },
+  {
+    "seller name": "Rony",
+    "product name": "OnePlus 9R",
+    "image": "",
+    "category": "OnePlus",
+    "original price": "40000",
+    "resale price": "24000",
+    "location": "Chittagong",
+    "year of use": "1.4"
+  }
+]

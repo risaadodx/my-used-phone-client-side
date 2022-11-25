@@ -3,13 +3,13 @@ import banner from "../../../assets/images/banner.jpg";
 
 const Banner = () => {
   return (
-    <div className="max-w-screen-xl mx-auto">
+    <div className="max-w-screen-xl mx-auto ">
       <div
-        className="hero min-h-screen"
+        className="hero min-h-screen rounded-2xl"
         style={{ backgroundImage: `url(${banner})` }}
       >
-        <div className="hero-overlay bg-opacity-60 "></div>
-        <div className="hero-content text-center text-neutral-content">
+        <div className="hero-overlay bg-opacity-60 rounded-2xl"></div>
+        <div className="hero-content text-center text-neutral-content ">
           <div className="max-w-md">
             <div className="flex items-center">
               <button className="btn btn-primary px-10">BUY</button>{" "}

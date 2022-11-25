@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const CategoryCard = ({ category }) => {
   const { _id, category_name, category_item, category_img } = category;
@@ -19,7 +20,9 @@ const CategoryCard = ({ category }) => {
               {category_item.length}
             </div>
           </h2>
-          <button className="btn mt-5">Browse</button>
+          <Link to={`/products/${category._id}`}>
+            <button className="btn mt-5">Browse</button>
+          </Link>
         </div>
       </div>
     </div>

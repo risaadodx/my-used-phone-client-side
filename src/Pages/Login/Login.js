@@ -2,6 +2,8 @@ import React, { useContext, useState } from "react";
 import { useForm } from "react-hook-form";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../context/AuthProvider";
+import { ImSpinner2 } from "react-icons/im";
+import { GoogleAuthProvider } from "firebase/auth";
 
 const Login = () => {
   const {
@@ -9,7 +11,7 @@ const Login = () => {
     formState: { errors },
     handleSubmit,
   } = useForm();
-  const { signIn } = useContext(AuthContext);
+  const { signIn, providerLogin, loading } = useContext(AuthContext);
 
   const [loginError, setLoginError] = useState("");
   const location = useLocation();
@@ -18,6 +20,7 @@ const Login = () => {
   const from = location.state?.from?.pathname || "/";
 
   const handleLogin = (data) => {
+    data.preventDefault();
     console.log(data);
     setLoginError("");
     signIn(data.email, data.password)
@@ -31,6 +34,23 @@ const Login = () => {
         setLoginError(error.message);
       });
   };
+
+  if (loading) {
+    return <ImSpinner2 className="animate-spin mx-auto"></ImSpinner2>;
+  }
+  const googleProvider = new GoogleAuthProvider();
+  const handleGoogleSignIn = () => {
+    providerLogin(googleProvider)
+      .then((result) => {
+        const user = result.user;
+        console.log(user);
+        navigate(from, { replace: true });
+      })
+      .catch((error) => {
+        console.error(error);
+      });
+  };
+
   return (
     <div className="text-center w-96 flex justify-center items-center mx-auto bg-white">
       <div className="p-5">
@@ -85,7 +105,10 @@ const Login = () => {
           </Link>
         </p>
         <div className="divider">OR</div>
-        <button className="btn btn-outline hover:btn-success w-full mt-3">
+        <button
+          onClick={handleGoogleSignIn}
+          className="btn btn-outline hover:btn-success w-full mt-3"
+        >
           CONTINUE WITH GOOGLE
         </button>
       </div>

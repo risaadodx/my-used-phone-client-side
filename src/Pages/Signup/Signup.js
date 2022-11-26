@@ -1,8 +1,9 @@
 import React, { useContext, useState } from "react";
 import { useForm } from "react-hook-form";
 import toast from "react-hot-toast";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../context/AuthProvider";
+import { ImSpinner2 } from "react-icons/im";
 
 const Signup = () => {
   const {
@@ -10,8 +11,10 @@ const Signup = () => {
     formState: { errors },
     handleSubmit,
   } = useForm();
-  const { createUser, updateUser } = useContext(AuthContext);
+  const { createUser, updateUser, loading } = useContext(AuthContext);
   const [signUpError, setSignUpError] = useState("");
+  const navigate = useNavigate();
+
   const handleLogin = (data) => {
     console.log(data);
     setSignUpError("");
@@ -24,7 +27,9 @@ const Signup = () => {
           displayName: data.name,
         };
         updateUser(userInfo)
-          .then(() => {})
+          .then(() => {
+            navigate("/");
+          })
           .catch((e) => console.log(e));
       })
       .catch((error) => {
@@ -32,6 +37,10 @@ const Signup = () => {
         setSignUpError(error.message);
       });
   };
+  //Loading spinner//
+  if (loading) {
+    return <ImSpinner2 className="animate-spin mx-auto"></ImSpinner2>;
+  }
   return (
     <div className="text-center w-96 flex justify-center items-center mx-auto bg-white">
       <div className="p-5">

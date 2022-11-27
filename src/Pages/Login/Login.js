@@ -14,13 +14,13 @@ const Login = () => {
   const { signIn, providerLogin, loading } = useContext(AuthContext);
 
   const [loginError, setLoginError] = useState("");
+
   const location = useLocation();
   const navigate = useNavigate();
 
   const from = location.state?.from?.pathname || "/";
 
   const handleLogin = (data) => {
-    data.preventDefault();
     console.log(data);
     setLoginError("");
     signIn(data.email, data.password)

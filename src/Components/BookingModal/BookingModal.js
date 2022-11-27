@@ -16,7 +16,7 @@ const BookingModal = ({ booking }) => {
     const phone = form.phone.value;
     const meetLocation = form.location.value;
 
-    const booikingSubmit = {
+    const bookingSubmit = {
       productName: phoneModal,
       name,
       price,
@@ -29,18 +29,19 @@ const BookingModal = ({ booking }) => {
       headers: {
         "content-type": "application/json",
       },
-      body: JSON.stringify(booking),
+      body: JSON.stringify(bookingSubmit),
     })
       .then((res) => res.json())
       .then((data) => {
         console.log(data);
-        toast.success("Booking Confirmed");
+        if (data.acknowledged) {
+          toast.success("Booking Confirmed");
+        }
       });
-    console.log(booikingSubmit);
+    console.log(bookingSubmit);
   };
   return (
     <div>
-      {/* Put this part before </body> tag */}
       <input type="checkbox" id="booking-modal" className="modal-toggle" />
       <div className="modal">
         <div className="modal-box relative">

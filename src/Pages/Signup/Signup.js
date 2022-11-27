@@ -4,6 +4,7 @@ import toast from "react-hot-toast";
 import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../context/AuthProvider";
 import { ImSpinner2 } from "react-icons/im";
+import useToken from "../../Hooks/useToken";
 
 const Signup = () => {
   const {
@@ -13,7 +14,13 @@ const Signup = () => {
   } = useForm();
   const { createUser, updateUser, loading } = useContext(AuthContext);
   const [signUpError, setSignUpError] = useState("");
+  const [createdUserEmail, setCreatedUserEmail] = useState("");
+  const [token] = useToken(createdUserEmail);
   const navigate = useNavigate();
+
+  if (token) {
+    navigate("/");
+  }
 
   const handleLogin = (data) => {
     console.log(data);
@@ -38,8 +45,8 @@ const Signup = () => {
       });
   };
 
-  const saveUser = (name, email) => {
-    const user = { name, email };
+  const saveUser = (email, name) => {
+    const user = { email, name };
     fetch("http://localhost:5000/users", {
       method: "POST",
       headers: {
@@ -49,10 +56,10 @@ const Signup = () => {
     })
       .then((res) => res.json())
       .then((data) => {
-        console.log(data);
-        navigate("/");
+        setCreatedUserEmail(email);
       });
   };
+
   //Loading spinner//
   if (loading) {
     return <ImSpinner2 className="animate-spin mx-auto"></ImSpinner2>;

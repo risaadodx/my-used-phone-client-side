@@ -5,14 +5,18 @@ import DashboardLayout from "../../Layout/DashboardLayout/DashboardLayout";
 import Main from "../../Layout/Main/Main";
 import NotFound from "../../Pages/404/NotFound";
 import Blog from "../../Pages/Blog/Blog";
-import AllUsers from "../../Pages/Dashboard/AllUsers/AllUsers";
+import AddProduct from "../../Pages/Dashboard/AddProduct/AddProduct";
+import AllBuyers from "../../Pages/Dashboard/AllUsers/AllBuyers";
+import AllSellers from "../../Pages/Dashboard/AllUsers/AllSellers";
 import Dashboard from "../../Pages/Dashboard/Dashboard";
 import MyOrders from "../../Pages/Dashboard/MyOrders/MyOrders";
+import MyProduct from "../../Pages/Dashboard/MyProduct/MyProduct";
 import Home from "../../Pages/Home/Home/Home";
 import Login from "../../Pages/Login/Login";
 import Signup from "../../Pages/Signup/Signup";
 import AdminRoute from "../AdminRoutes/AdminRoute";
 import PrivateRoute from "../PrivateRoute/PrivateRoute";
+import SellerRoute from "../SellerRoute/SellerRoute";
 
 const router = createBrowserRouter([
   {
@@ -64,11 +68,35 @@ const router = createBrowserRouter([
         element: <MyOrders></MyOrders>,
       },
       {
-        path: "/dashboard/allUsers",
+        path: "/dashboard/allBuyers",
         element: (
           <AdminRoute>
-            <AllUsers></AllUsers>
+            <AllBuyers></AllBuyers>
           </AdminRoute>
+        ),
+      },
+      {
+        path: "/dashboard/allSellers",
+        element: (
+          <AdminRoute>
+            <AllSellers></AllSellers>
+          </AdminRoute>
+        ),
+      },
+      {
+        path: "/dashboard/addProduct",
+        element: (
+          <SellerRoute>
+            <AddProduct></AddProduct>
+          </SellerRoute>
+        ),
+      },
+      {
+        path: "/dashboard/myProducts",
+        element: (
+          <SellerRoute>
+            <MyProduct></MyProduct>
+          </SellerRoute>
         ),
       },
     ],

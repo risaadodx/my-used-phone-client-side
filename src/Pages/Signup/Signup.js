@@ -35,7 +35,7 @@ const Signup = () => {
         };
         updateUser(userInfo)
           .then(() => {
-            saveUser(data.email, data.name);
+            saveUser(data.email, data.name, data.role);
           })
           .catch((e) => console.log(e));
       })
@@ -45,8 +45,8 @@ const Signup = () => {
       });
   };
 
-  const saveUser = (email, name) => {
-    const user = { email, name };
+  const saveUser = (email, name, role) => {
+    const user = { email, name, role };
     fetch("http://localhost:5000/users", {
       method: "POST",
       headers: {
@@ -68,8 +68,23 @@ const Signup = () => {
     <div className="text-center w-96 flex justify-center items-center mx-auto bg-white">
       <div className="p-5">
         <h2 className="text-2xl">Sign UP</h2>
+        <hr className="mt-5" />
         <form onSubmit={handleSubmit(handleLogin)}>
           <div className=" w-full ">
+            <div>
+              <label className="label">
+                <span className="label-text">Account Type</span>
+              </label>
+              <select
+                {...register("role")}
+                className="select select-bordered w-full max-w-xs"
+              >
+                <option value="buyer" selected>
+                  buyer
+                </option>
+                <option value="seller">seller</option>
+              </select>
+            </div>
             <label className="label">
               <span className="label-text">Name</span>
             </label>

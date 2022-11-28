@@ -48,7 +48,9 @@ const router = createBrowserRouter([
           </PrivateRoute>
         ),
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/products/${params.id}`),
+          fetch(
+            `https://b612-used-products-resale-server-side-risaadodx.vercel.app/products/${params.id}`
+          ),
       },
     ],
   },

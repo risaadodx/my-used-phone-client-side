@@ -47,13 +47,16 @@ const Signup = () => {
 
   const saveUser = (email, name, role) => {
     const user = { email, name, role };
-    fetch("http://localhost:5000/users", {
-      method: "POST",
-      headers: {
-        "content-type": "application/json",
-      },
-      body: JSON.stringify(user),
-    })
+    fetch(
+      "https://b612-used-products-resale-server-side-risaadodx.vercel.app/users",
+      {
+        method: "POST",
+        headers: {
+          "content-type": "application/json",
+        },
+        body: JSON.stringify(user),
+      }
+    )
       .then((res) => res.json())
       .then((data) => {
         setCreatedUserEmail(email);

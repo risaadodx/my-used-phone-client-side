@@ -1,8 +1,14 @@
 import { useQuery } from "@tanstack/react-query";
-import React from "react";
+import React, { useState } from "react";
 import toast from "react-hot-toast";
+import ConfirmationModal from "../../../Components/ConfirmationModal/ConfirmationModal";
 
 const AllBuyers = () => {
+  const [deletingUser, setDeletingUser] = useState(null);
+  const closeModal = () => {
+    setDeletingUser(null);
+  };
+
   const { data: users = [], refetch } = useQuery({
     queryKey: ["users"],
     queryFn: async () => {
@@ -11,6 +17,22 @@ const AllBuyers = () => {
       return data;
     },
   });
+
+  const handleDeleteuser = (user) => {
+    fetch(`https://http://localhost:5000/users/email=${user?.email}`, {
+      method: "DELETE",
+      headers: {
+        authorization: `bearer ${localStorage.getItem("accessToken")}`,
+      },
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        if (data.deletedCount > 0) {
+          refetch();
+          toast.success(`User ${user.name} deleted successfully`);
+        }
+      });
+  };
 
   const handleMakeAdmin = (id) => {
     fetch(`http://localhost:5000/users/admin/${id}`, {
@@ -59,15 +81,27 @@ const AllBuyers = () => {
                 </td>
                 <td>
                   {" "}
-                  <button className="btn btn-sm btn-error hover:btn-success">
+                  <label
+                    onClick={() => setDeletingUser(user)}
+                    className="btn btn-sm btn-error hover:btn-success"
+                    htmlFor="confirmation-modal"
+                  >
                     Delete
-                  </button>
+                  </label>
                 </td>
               </tr>
             ))}
           </tbody>
         </table>
       </div>
+      {deletingUser && (
+        <ConfirmationModal
+          title={`Are you sure you want to delete ${deletingUser.name}?`}
+          confirmAction={handleDeleteuser}
+          modalData={deletingUser}
+          closeModal={closeModal}
+        ></ConfirmationModal>
+      )}
     </div>
   );
 };

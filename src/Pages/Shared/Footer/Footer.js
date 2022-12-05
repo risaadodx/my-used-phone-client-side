@@ -1,11 +1,27 @@
 import React from "react";
 
+import { FaFacebook, FaTwitter, FaInstagram } from "react-icons/fa";
+import { Link } from "react-router-dom";
+
 const Footer = () => {
   return (
     <div>
-      <footer className="footer p-10 bg-neutral text-neutral-content items-center mt-40">
+      <footer className="footer p-10 bg-base-200 text-base-content items-center mt-40">
         <div>
-          <h2 className="text-3xl font-bold">Recycle Me</h2>
+          <Link to="/">
+            <h2 className="text-3xl font-bold">Recycle Me</h2>
+          </Link>
+          <div className=" flex w-3/4 justify-between mt-2">
+            <Link>
+              <FaFacebook className="text-xl hover:text-green-600"></FaFacebook>
+            </Link>
+            <Link>
+              <FaInstagram className="text-xl hover:text-green-600"></FaInstagram>
+            </Link>
+            <Link>
+              <FaTwitter className="text-xl hover:text-green-600"></FaTwitter>
+            </Link>
+          </div>
         </div>
         <div>
           <span className="footer-title">Company</span>

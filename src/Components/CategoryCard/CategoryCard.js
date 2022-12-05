@@ -5,7 +5,7 @@ const CategoryCard = ({ category }) => {
   const { _id, category_name, category_item, category_img } = category;
   return (
     <div>
-      <div className="card w-96 bg-base-100 shadow-xl">
+      <div className="card w-86 md:w-96 bg-base-100 shadow-xl">
         <figure>
           <img
             style={{ width: "400px", height: "300px" }}

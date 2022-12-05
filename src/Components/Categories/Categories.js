@@ -11,7 +11,7 @@ const Categories = () => {
       .then((data) => setProducts(data));
   }, []);
   return (
-    <div className="max-w-6xl mx-auto mt-20">
+    <div className="max-w-6xl md:mx-auto mt-20 mx-5">
       <div className="grid lg:grid-cols-3 grid-cols-1 gap-6 mt-12 ">
         {products.map((category) => (
           <CategoryCard key={category._id} category={category}></CategoryCard>
